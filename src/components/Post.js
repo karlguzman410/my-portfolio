@@ -12,13 +12,14 @@ export default function Post() {
             .fetch(`*[_type == "post"]{
                 title,
                 slug,
+                publishedAt,
                 mainImage{
                     asset->{
                         _id,
                         url
                     },
                     alt
-                }
+                },
             }`)
             .then((data) => setPost(data))
             .catch(console.error)
